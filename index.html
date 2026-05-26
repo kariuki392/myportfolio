@@ -19,9 +19,9 @@
     --border: rgba(201,168,76,0.18);
   }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
+ 
   html { scroll-behavior: smooth; }
-
+ 
   body {
     background: var(--navy);
     color: var(--white);
@@ -30,7 +30,7 @@
     line-height: 1.7;
     overflow-x: hidden;
   }
-
+ 
   /* ── BACKGROUND ── */
   body::before {
     content: '';
@@ -56,7 +56,7 @@
     pointer-events: none;
     z-index: 0;
   }
-
+ 
   /* ── NAV ── */
   nav {
     position: fixed;
@@ -93,7 +93,7 @@
     transition: color 0.25s;
   }
   .nav-links a:hover { color: var(--gold); }
-
+ 
   /* ── SECTIONS ── */
   section {
     position: relative;
@@ -102,7 +102,7 @@
     margin: 0 auto;
     padding: 0 2.5rem;
   }
-
+ 
   /* ── HERO ── */
   #hero {
     min-height: 100vh;
@@ -194,7 +194,7 @@
     border: 1px solid rgba(245,240,232,0.3);
   }
   .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
-
+ 
   .hero-scroll {
     position: absolute;
     bottom: 2.5rem;
@@ -219,7 +219,7 @@
     background: linear-gradient(to bottom, var(--gold), transparent);
     animation: scrollPulse 2s 1.5s infinite;
   }
-
+ 
   /* ── SECTION HEADINGS ── */
   .sec-header {
     display: flex;
@@ -244,7 +244,7 @@
     height: 1px;
     background: var(--border);
   }
-
+ 
   /* ── ABOUT / SKILLS ── */
   .about-grid {
     display: grid;
@@ -258,7 +258,7 @@
     font-size: 1rem;
   }
   .about-text strong { color: var(--gold-light); font-weight: 500; }
-
+ 
   .skills-list { display: flex; flex-direction: column; gap: 1.6rem; }
   .skill-group-label {
     font-family: 'DM Mono', monospace;
@@ -284,7 +284,7 @@
     transition: all 0.2s;
   }
   .tag:hover { border-color: var(--gold); color: var(--gold); }
-
+ 
   /* ── EXPERIENCE ── */
   .timeline { position: relative; padding-left: 2rem; }
   .timeline::before {
@@ -344,7 +344,7 @@
     color: var(--gold);
     font-weight: 600;
   }
-
+ 
   /* ── PROJECTS ── */
   .projects-grid {
     display: grid;
@@ -406,7 +406,7 @@
     color: var(--accent);
     border-radius: 2px;
   }
-
+ 
   /* ── CERTIFICATIONS ── */
   .certs-grid {
     display: grid;
@@ -450,7 +450,7 @@
     font-size: 0.72rem;
     color: var(--muted);
   }
-
+ 
   /* ── CONTACT ── */
   #contact { padding-bottom: 8rem; }
   .contact-inner {
@@ -505,7 +505,7 @@
     color: var(--white);
     margin-top: 0.1rem;
   }
-
+ 
   /* ── FOOTER ── */
   footer {
     position: relative;
@@ -518,7 +518,7 @@
     color: var(--muted);
     letter-spacing: 0.06em;
   }
-
+ 
   /* ── ANIMATIONS ── */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(24px); }
@@ -532,7 +532,7 @@
     0%, 100% { opacity: 0.6; transform: scaleY(1); }
     50%       { opacity: 1;   transform: scaleY(1.15); }
   }
-
+ 
   .reveal {
     opacity: 0;
     transform: translateY(28px);
@@ -542,7 +542,50 @@
     opacity: 1;
     transform: translateY(0);
   }
-
+ 
+  /* ── PROJECT TABS ── */
+  .proj-tabs {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+  }
+  .proj-tab {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.7rem 1.5rem;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.25s;
+    letter-spacing: 0.04em;
+  }
+  .proj-tab:hover { border-color: rgba(201,168,76,0.4); color: var(--white); }
+  .proj-tab.active {
+    background: rgba(201,168,76,0.1);
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+  .tab-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px; height: 20px;
+    background: rgba(201,168,76,0.15);
+    border-radius: 50%;
+    font-size: 0.68rem;
+    color: var(--gold);
+  }
+  .proj-tab:not(.active) .tab-count {
+    background: rgba(136,153,170,0.15);
+    color: var(--muted);
+  }
+ 
   /* ── RESPONSIVE ── */
   @media (max-width: 768px) {
     nav { padding: 1rem 1.5rem; }
@@ -556,7 +599,7 @@
 </style>
 </head>
 <body>
-
+ 
 <!-- NAV -->
 <nav>
   <a class="nav-logo" href="#hero">GK</a>
@@ -569,7 +612,7 @@
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
-
+ 
 <!-- HERO -->
 <div id="hero" style="position:relative; z-index:1;">
   <div class="hero-tag">Available for opportunities</div>
@@ -589,7 +632,7 @@
     <span>Scroll</span>
   </div>
 </div>
-
+ 
 <!-- ABOUT -->
 <section id="about">
   <div class="sec-header reveal">
@@ -637,7 +680,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- EXPERIENCE -->
 <section id="experience">
   <div class="sec-header reveal">
@@ -666,7 +709,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- PROJECTS -->
 <section id="projects">
   <div class="sec-header reveal">
@@ -674,89 +717,139 @@
     <h2 class="sec-title">Projects</h2>
     <div class="sec-line"></div>
   </div>
-  <div class="projects-grid">
+ 
+  <!-- TAB SWITCHER -->
+  <div class="proj-tabs reveal">
+    <button class="proj-tab active" onclick="switchTab('data')">
+      <span class="tab-label">Data Analysis</span>
+      <span class="tab-count">5</span>
+    </button>
+    <button class="proj-tab" onclick="switchTab('software')">
+      <span class="tab-label">Software Development</span>
+      <span class="tab-count">5</span>
+    </button>
+  </div>
+ 
+  <!-- DATA ANALYSIS PROJECTS -->
+  <div id="tab-data" class="projects-grid tab-panel">
+ 
     <div class="project-card reveal">
-      <div class="proj-num">01 / Data Analytics</div>
-      <div class="proj-title">UK Vehicle Sales — German Cars Analysis</div>
-      <div class="proj-period">Jul 2024 – Sep 2024</div>
-      <p class="proj-desc">Analyzed a dataset of over 70,000 vehicle records using Python and Power BI. Identified 8 distinct customer and market segments based on depreciation factors and purchase drivers. Created interactive visualizations to communicate insights and support data-driven decisions.</p>
+      <div class="proj-num">DA 01 · GitHub</div>
+      <div class="proj-title">COVID-19 Global Data Analysis</div>
+      <div class="proj-period"><a href="https://github.com/kariuki392/DataAnalysisProject10-COVID-19-Global-Data-Analysis" target="_blank" style="color:var(--accent);text-decoration:none;font-family:'DM Mono',monospace;font-size:0.72rem;">View on GitHub ↗</a></div>
+      <p class="proj-desc">Analysed the full arc of the COVID-19 pandemic across 255 countries from January 2020 to October 2023. Tracked case and death trajectories, quantified vaccination rollout impact, modelled healthcare system strain, and identified socioeconomic determinants of outcomes using K-Means clustering across 350,085 records.</p>
       <div class="proj-tags">
-        <span class="proj-tag">Python</span>
-        <span class="proj-tag">Power BI</span>
-        <span class="proj-tag">Matplotlib</span>
-        <span class="proj-tag">Seaborn</span>
-        <span class="proj-tag">Market Segmentation</span>
+        <span class="proj-tag">Python</span><span class="proj-tag">Pandas</span><span class="proj-tag">Scikit-learn</span>
+        <span class="proj-tag">Matplotlib</span><span class="proj-tag">Seaborn</span><span class="proj-tag">K-Means</span><span class="proj-tag">Epidemiology</span>
       </div>
     </div>
+ 
     <div class="project-card reveal">
-      <div class="proj-num">02 / Full Stack</div>
-      <div class="proj-title">F1 Vision 2030 — Carbon Zero Website</div>
-      <div class="proj-period">Jul 2023 – Sep 2023</div>
-      <p class="proj-desc">Developed a full-stack website to track Formula 1, F2, and F3 carbon emissions and grand prix results. Enabled petition signing for sustainability changes in motorsport, demonstrating commitment to real-world environmental impact.</p>
+      <div class="proj-num">DA 02 · GitHub</div>
+      <div class="proj-title">HR Analytics — Employee Attrition & Performance</div>
+      <div class="proj-period"><a href="https://github.com/kariuki392/DataAnalysisProject9-HR-Analytics-Employee-Attrition-and-Performance" target="_blank" style="color:var(--accent);text-decoration:none;font-family:'DM Mono',monospace;font-size:0.72rem;">View on GitHub ↗</a></div>
+      <p class="proj-desc">People intelligence dashboard on the IBM HR Analytics dataset (1,470 employees). Identified key attrition drivers, profiled high-risk segments, and built a Random Forest prediction model achieving AUC 0.88. Quantified a $300K+ net saving from model-assisted retention interventions.</p>
       <div class="proj-tags">
-        <span class="proj-tag">HTML/CSS</span>
-        <span class="proj-tag">JavaScript</span>
-        <span class="proj-tag">PHP</span>
-        <span class="proj-tag">Sustainability</span>
-        <span class="proj-tag">Full Stack</span>
+        <span class="proj-tag">Python</span><span class="proj-tag">Scikit-learn</span><span class="proj-tag">Random Forest</span>
+        <span class="proj-tag">Gradient Boosting</span><span class="proj-tag">HR Analytics</span><span class="proj-tag">ML Classification</span>
       </div>
     </div>
+ 
     <div class="project-card reveal">
-      <div class="proj-num">03 / Healthcare · Final Year Project · GitHub</div>
+      <div class="proj-num">DA 03 · GitHub</div>
+      <div class="proj-title">NLP Sentiment Analysis — Amazon Product Reviews</div>
+      <div class="proj-period"><a href="https://github.com/kariuki392/DataAnalysisProject6-NLP-Sentiment-Analysis-Amazon-Product-Reviews" target="_blank" style="color:var(--accent);text-decoration:none;font-family:'DM Mono',monospace;font-size:0.72rem;">View on GitHub ↗</a></div>
+      <p class="proj-desc">Applied NLP to 1,597 Amazon product reviews across 62 products. Used TextBlob for sentiment labelling, TF-IDF for feature extraction, and trained Logistic Regression, Random Forest, and Gradient Boosting classifiers to turn unstructured customer text into actionable product intelligence.</p>
+      <div class="proj-tags">
+        <span class="proj-tag">NLP</span><span class="proj-tag">TextBlob</span><span class="proj-tag">TF-IDF</span>
+        <span class="proj-tag">Scikit-learn</span><span class="proj-tag">Sentiment Analysis</span><span class="proj-tag">Python</span>
+      </div>
+    </div>
+ 
+    <div class="project-card reveal">
+      <div class="proj-num">DA 04 · GitHub</div>
+      <div class="proj-title">Tech & AI Candidate Market Segmentation</div>
+      <div class="proj-period"><a href="https://github.com/kariuki392/DataAnalysisProject1-Candidate-Market-Segmentation-Study" target="_blank" style="color:var(--accent);text-decoration:none;font-family:'DM Mono',monospace;font-size:0.72rem;">View on GitHub ↗</a></div>
+      <p class="proj-desc">Segmented the Tech & AI talent pool (2024–2026) into distinct candidate profiles based on career stage, skill demand, AI adoption, and hiring velocity. Identified supply-demand gaps and guided targeted sourcing strategies using K-Means clustering, Python, Pandas, and Scikit-learn.</p>
+      <div class="proj-tags">
+        <span class="proj-tag">Python</span><span class="proj-tag">Pandas</span><span class="proj-tag">K-Means</span>
+        <span class="proj-tag">Scikit-learn</span><span class="proj-tag">Talent Analytics</span><span class="proj-tag">Market Segmentation</span>
+      </div>
+    </div>
+ 
+    <div class="project-card reveal">
+      <div class="proj-num">DA 05 · Risk & Compliance</div>
+      <div class="proj-title">Conflict of Interest Screening & Risk Assessment</div>
+      <div class="proj-period">Aug 2025 – Dec 2025 &nbsp;·&nbsp; <span style="color:var(--muted);font-family:'DM Mono',monospace;font-size:0.7rem;">Link coming soon</span></div>
+      <p class="proj-desc">Conducted conflict-of-interest checks for 35+ simulated audit and consulting clients. Delivered risk-rated screening reports applying IESBA, IFAC, and PCAOB frameworks. Used Excel and Power BI to analyse large datasets and produce management summaries, tracking all correspondence in a centralised system.</p>
+      <div class="proj-tags">
+        <span class="proj-tag">Excel</span><span class="proj-tag">Power BI</span><span class="proj-tag">Risk Assessment</span>
+        <span class="proj-tag">IESBA / IFAC / PCAOB</span><span class="proj-tag">Compliance</span><span class="proj-tag">Data Integrity</span>
+      </div>
+    </div>
+ 
+  </div>
+ 
+  <!-- SOFTWARE DEVELOPMENT PROJECTS -->
+  <div id="tab-software" class="projects-grid tab-panel" style="display:none;">
+ 
+    <div class="project-card reveal">
+      <div class="proj-num">SD 01 · Healthcare · Final Year Project · GitHub</div>
       <div class="proj-title">DoctorLoop</div>
-      <div class="proj-period"><a href="https://github.com/kariuki392/doctorloop" target="_blank" style="color:var(--accent);text-decoration:none;font-family:'DM Mono',monospace;font-size:0.75rem;">github.com/kariuki392/doctorloop ↗</a></div>
-      <p class="proj-desc">Final year Business Information Technology project. A full-stack web app enabling chronically ill patients to log symptoms and receive doctor feedback and prescriptions remotely. Integrated pharmacy fulfilment — pharmacies accept and deliver prescriptions through the same platform, closing the loop from diagnosis to dispensing.</p>
+      <div class="proj-period"><a href="https://github.com/kariuki392/doctorloop" target="_blank" style="color:var(--accent);text-decoration:none;font-family:'DM Mono',monospace;font-size:0.72rem;">github.com/kariuki392/doctorloop ↗</a></div>
+      <p class="proj-desc">Final year BIT project. A full-stack web app enabling chronically ill patients to log symptoms and receive doctor feedback and prescriptions remotely. Integrated pharmacy fulfilment — pharmacies accept and deliver prescriptions through the same platform, closing the loop from diagnosis to dispensing.</p>
       <div class="proj-tags">
-        <span class="proj-tag">Full Stack</span>
-        <span class="proj-tag">Healthcare</span>
-        <span class="proj-tag">Telehealth</span>
-        <span class="proj-tag">Final Year Project</span>
-        <span class="proj-tag">Pharmacy Integration</span>
+        <span class="proj-tag">Full Stack</span><span class="proj-tag">Healthcare</span><span class="proj-tag">Telehealth</span>
+        <span class="proj-tag">Pharmacy Integration</span><span class="proj-tag">Final Year Project</span>
       </div>
     </div>
+ 
     <div class="project-card reveal">
-      <div class="proj-num">04 / Hackathon · GitHub</div>
-      <div class="proj-title">seeNairobi</div>
-      <div class="proj-period"><a href="https://github.com/kariuki392/seeNairobi" target="_blank" style="color:var(--accent);text-decoration:none;font-family:'DM Mono',monospace;font-size:0.75rem;">github.com/kariuki392/seeNairobi ↗</a></div>
-      <p class="proj-desc">A hackathon project exploring Nairobi through data and interactive mapping. Built under time pressure to solve a real urban challenge, showcasing rapid prototyping and collaborative development.</p>
-      <div class="proj-tags">
-        <span class="proj-tag">Hackathon</span>
-        <span class="proj-tag">Nairobi</span>
-        <span class="proj-tag">Interactive</span>
-        <span class="proj-tag">Rapid Prototype</span>
-      </div>
-    </div>
-    <div class="project-card reveal">
-      <div class="proj-num">05 / Data Engineering · In Progress</div>
+      <div class="proj-num">SD 02 · Data Engineering · In Progress</div>
       <div class="proj-title">ETL Captain Dash</div>
       <div class="proj-period">2025 – Present &nbsp;·&nbsp; <span style="color:var(--gold);font-family:'DM Mono',monospace;font-size:0.72rem;">● Active development</span></div>
-      <p class="proj-desc">An advanced data engineering platform demonstrating production-ready ETL and ELT pipelines for processing large-scale datasets. Built to showcase real-world data engineering practices — extraction from diverse sources, complex transformations, and loading into analytical targets — with a monitoring dashboard for pipeline observability.</p>
+      <p class="proj-desc">An advanced data engineering platform demonstrating production-ready ETL and ELT pipelines for processing large-scale datasets. Covers extraction from diverse sources, complex transformations, and loading into analytical targets — with a monitoring dashboard for full pipeline observability.</p>
       <div class="proj-tags">
-        <span class="proj-tag">Data Engineering</span>
-        <span class="proj-tag">ETL / ELT</span>
-        <span class="proj-tag">Pipelines</span>
-        <span class="proj-tag">Large-scale Data</span>
-        <span class="proj-tag">Dashboard</span>
-        <span class="proj-tag">Production-ready</span>
+        <span class="proj-tag">Data Engineering</span><span class="proj-tag">ETL / ELT</span><span class="proj-tag">Pipelines</span>
+        <span class="proj-tag">Large-scale Data</span><span class="proj-tag">Dashboard</span><span class="proj-tag">Production-ready</span>
       </div>
     </div>
-    <div class="project-card reveal" style="grid-column: 1 / -1;">
-      <div class="proj-num">06 / Risk & Compliance · Professional Simulation</div>
-      <div class="proj-title">Conflict of Interest Screening & Risk Assessment</div>
-      <div class="proj-period">Aug 2025 – Dec 2025</div>
-      <p class="proj-desc">Conducted comprehensive conflict-of-interest checks for 35+ simulated audit and consulting clients by researching company structures, ownership relationships, affiliations, and independence threats. Delivered screening reports with clear conclusions, supporting documentation, and risk ratings. Applied IESBA, IFAC, and PCAOB regulatory frameworks to evaluate potential conflicts. Utilized Excel and Power BI to analyse datasets and produce risk summaries for management review. Collaborated with a mock cross-functional team, escalating complex cases and tracking all correspondence in a centralised Excel system.</p>
+ 
+    <div class="project-card reveal">
+      <div class="proj-num">SD 03 · Scheduling · GitHub</div>
+      <div class="proj-title">Captain's Appointment System</div>
+      <div class="proj-period"><a href="https://github.com/kariuki392/CaptainsAppointment-System-" target="_blank" style="color:var(--accent);text-decoration:none;font-family:'DM Mono',monospace;font-size:0.72rem;">github.com/kariuki392/CaptainsAppointment-System- ↗</a></div>
+      <p class="proj-desc">A full-featured appointment scheduling and management system. Enables users to book, manage, and track appointments with a clean interface and structured backend — demonstrating practical software engineering for real-world service workflows.</p>
       <div class="proj-tags">
-        <span class="proj-tag">Excel</span>
-        <span class="proj-tag">Power BI</span>
-        <span class="proj-tag">Risk Assessment</span>
-        <span class="proj-tag">IESBA / IFAC / PCAOB</span>
-        <span class="proj-tag">Data Integrity</span>
-        <span class="proj-tag">Compliance</span>
+        <span class="proj-tag">Full Stack</span><span class="proj-tag">Scheduling</span><span class="proj-tag">Web App</span><span class="proj-tag">CRUD</span>
       </div>
     </div>
+ 
+    <div class="project-card reveal">
+      <div class="proj-num">SD 04 · Cybersecurity · GitHub</div>
+      <div class="proj-title">File Integrity Checker</div>
+      <div class="proj-period"><a href="https://github.com/kariuki392/file_integritychecker" target="_blank" style="color:var(--accent);text-decoration:none;font-family:'DM Mono',monospace;font-size:0.72rem;">github.com/kariuki392/file_integritychecker ↗</a></div>
+      <p class="proj-desc">A cybersecurity utility that monitors and verifies file integrity using cryptographic hashing. Detects unauthorised modifications, tampering, or corruption of files — applying core principles from Google's Cybersecurity Professional Certificate in a practical, deployable tool.</p>
+      <div class="proj-tags">
+        <span class="proj-tag">Cybersecurity</span><span class="proj-tag">Python</span><span class="proj-tag">Hashing</span>
+        <span class="proj-tag">File Monitoring</span><span class="proj-tag">Security Tool</span>
+      </div>
+    </div>
+ 
+    <div class="project-card reveal">
+      <div class="proj-num">SD 05 · Hackathon · GitHub</div>
+      <div class="proj-title">AjiraMVP</div>
+      <div class="proj-period"><a href="https://github.com/kariuki392/AjiraMVP" target="_blank" style="color:var(--accent);text-decoration:none;font-family:'DM Mono',monospace;font-size:0.72rem;">github.com/kariuki392/AjiraMVP ↗</a> &nbsp;·&nbsp; <span style="color:var(--gold);font-family:'DM Mono',monospace;font-size:0.7rem;">seeNairobi Hackathon</span></div>
+      <p class="proj-desc">MVP built during the seeNairobi hackathon. Ajira (Swahili for "employment") is a platform tackling urban youth unemployment in Nairobi by connecting job seekers with opportunities through an accessible, mobile-first interface — built rapidly under hackathon conditions.</p>
+      <div class="proj-tags">
+        <span class="proj-tag">Hackathon</span><span class="proj-tag">MVP</span><span class="proj-tag">Employment Tech</span>
+        <span class="proj-tag">Nairobi</span><span class="proj-tag">Mobile-first</span><span class="proj-tag">Social Impact</span>
+      </div>
+    </div>
+ 
   </div>
 </section>
-
+ 
 <!-- EDUCATION -->
 <section id="education">
   <div class="sec-header reveal">
@@ -784,7 +877,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- CERTIFICATIONS -->
 <section id="certifications">
   <div class="sec-header reveal">
@@ -823,7 +916,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- CONTACT -->
 <section id="contact">
   <div class="sec-header reveal">
@@ -868,13 +961,25 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- FOOTER -->
 <footer>
   <p>© 2026 Gabriel Kariuki · Nairobi, Kenya · Kenyan Citizen</p>
 </footer>
-
+ 
 <script>
+  // Tab switching
+  function switchTab(tab) {
+    document.querySelectorAll('.tab-panel').forEach(p => p.style.display = 'none');
+    document.querySelectorAll('.proj-tab').forEach(t => t.classList.remove('active'));
+    document.getElementById('tab-' + tab).style.display = 'grid';
+    event.currentTarget.classList.add('active');
+    // Trigger reveal for newly visible cards
+    document.querySelectorAll('#tab-' + tab + ' .reveal:not(.visible)').forEach((el, i) => {
+      setTimeout(() => el.classList.add('visible'), i * 80);
+    });
+  }
+ 
   // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
