@@ -543,6 +543,76 @@
     transform: translateY(0);
   }
  
+  /* ── VENTURE CARDS ── */
+  .ventures-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  .venture-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 2rem;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .venture-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gold), var(--accent));
+    opacity: 0.6;
+  }
+  .venture-card:hover { border-color: rgba(201,168,76,0.4); transform: translateY(-3px); }
+  .venture-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+  }
+  .venture-badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--gold);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+    background: rgba(201,168,76,0.1);
+    border: 1px solid rgba(201,168,76,0.25);
+    padding: 0.15rem 0.5rem;
+    border-radius: 2px;
+    display: inline-block;
+  }
+  .venture-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.6rem;
+    color: var(--white);
+    line-height: 1.1;
+  }
+  .venture-status {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+  }
+  .venture-status.active { color: #4ade80; }
+  .venture-tagline {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--accent);
+    margin-bottom: 0.9rem;
+    letter-spacing: 0.02em;
+  }
+  .venture-desc {
+    font-size: 0.93rem;
+    color: rgba(245,240,232,0.65);
+    line-height: 1.75;
+    margin-bottom: 1.2rem;
+  }
+  .venture-tags { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+ 
   /* ── PROJECT TABS ── */
   .proj-tabs {
     display: flex;
@@ -590,7 +660,7 @@
   @media (max-width: 768px) {
     nav { padding: 1rem 1.5rem; }
     .nav-links { display: none; }
-    .about-grid, .projects-grid, .certs-grid, .contact-inner {
+    .about-grid, .projects-grid, .certs-grid, .contact-inner, .ventures-grid {
       grid-template-columns: 1fr;
       gap: 2rem;
     }
@@ -606,6 +676,7 @@
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#experience">Experience</a></li>
+    <li><a href="#ventures">Ventures</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#education">Education</a></li>
     <li><a href="#certifications">Certs</a></li>
@@ -710,10 +781,61 @@
   </div>
 </section>
  
+<!-- VENTURES -->
+<section id="ventures">
+  <div class="sec-header reveal">
+    <span class="sec-num">03</span>
+    <h2 class="sec-title">Ventures</h2>
+    <div class="sec-line"></div>
+  </div>
+  <div class="ventures-grid">
+ 
+    <div class="venture-card reveal">
+      <div class="venture-header">
+        <div>
+          <div class="venture-badge">Co-Founder</div>
+          <div class="venture-name">Wirra</div>
+        </div>
+        <div class="venture-status active">● Active</div>
+      </div>
+      <p class="venture-tagline">End-to-end recruitment platform for modern hiring teams</p>
+      <p class="venture-desc">Co-founded Wirra to solve the fragmentation problem in talent acquisition. Wirra lets companies post jobs, receive and manage applications, track candidates on a unified dashboard, schedule interviews, and run the entire hiring process in one place — replacing the chaos of spreadsheets and email threads with a structured, data-driven workflow.</p>
+      <div class="venture-tags">
+        <span class="tag">HRTech</span>
+        <span class="tag">SaaS</span>
+        <span class="tag">ATS</span>
+        <span class="tag">Recruitment</span>
+        <span class="tag">Dashboard</span>
+      </div>
+    </div>
+ 
+    <div class="venture-card reveal">
+      <div class="venture-header">
+        <div>
+          <div class="venture-badge">Co-Founder</div>
+          <div class="venture-name">Cloudeo</div>
+        </div>
+        <div class="venture-status active">● Active</div>
+      </div>
+      <p class="venture-tagline">Vendor-independent AI geospatial marketplace</p>
+      <p class="venture-desc">Co-founded Cloudeo, a cloud-based geospatial market platform that provides professional geo-information services across agriculture, urban planning, logistics, telecommunications, and water management. The platform gives customers access to satellite imagery, 3D terrain models, thematic maps, and sensor data — combined with software, analytics, and scalable IT infrastructure on a pay-per-use basis.</p>
+      <div class="venture-tags">
+        <span class="tag">GeoTech</span>
+        <span class="tag">Earth Observation</span>
+        <span class="tag">SaaS</span>
+        <span class="tag">AI</span>
+        <span class="tag">Satellite Imagery</span>
+        <span class="tag">GIS</span>
+      </div>
+    </div>
+ 
+  </div>
+</section>
+ 
 <!-- PROJECTS -->
 <section id="projects">
   <div class="sec-header reveal">
-    <span class="sec-num">03</span>
+    <span class="sec-num">04</span>
     <h2 class="sec-title">Projects</h2>
     <div class="sec-line"></div>
   </div>
@@ -853,7 +975,7 @@
 <!-- EDUCATION -->
 <section id="education">
   <div class="sec-header reveal">
-    <span class="sec-num">04</span>
+    <span class="sec-num">05</span>
     <h2 class="sec-title">Education</h2>
     <div class="sec-line"></div>
   </div>
@@ -881,7 +1003,7 @@
 <!-- CERTIFICATIONS -->
 <section id="certifications">
   <div class="sec-header reveal">
-    <span class="sec-num">05</span>
+    <span class="sec-num">06</span>
     <h2 class="sec-title">Certifications</h2>
     <div class="sec-line"></div>
   </div>
@@ -920,7 +1042,7 @@
 <!-- CONTACT -->
 <section id="contact">
   <div class="sec-header reveal">
-    <span class="sec-num">06</span>
+    <span class="sec-num">07</span>
     <h2 class="sec-title">Contact</h2>
     <div class="sec-line"></div>
   </div>
