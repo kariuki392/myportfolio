@@ -19,9 +19,9 @@
     --border: rgba(201,168,76,0.18);
   }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
- 
+
   html { scroll-behavior: smooth; }
- 
+
   body {
     background: var(--navy);
     color: var(--white);
@@ -30,7 +30,7 @@
     line-height: 1.7;
     overflow-x: hidden;
   }
- 
+
   /* ── BACKGROUND ── */
   body::before {
     content: '';
@@ -56,7 +56,7 @@
     pointer-events: none;
     z-index: 0;
   }
- 
+
   /* ── NAV ── */
   nav {
     position: fixed;
@@ -93,7 +93,7 @@
     transition: color 0.25s;
   }
   .nav-links a:hover { color: var(--gold); }
- 
+
   /* ── SECTIONS ── */
   section {
     position: relative;
@@ -102,7 +102,7 @@
     margin: 0 auto;
     padding: 0 2.5rem;
   }
- 
+
   /* ── HERO ── */
   #hero {
     min-height: 100vh;
@@ -194,7 +194,7 @@
     border: 1px solid rgba(245,240,232,0.3);
   }
   .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
- 
+
   .hero-scroll {
     position: absolute;
     bottom: 2.5rem;
@@ -219,7 +219,7 @@
     background: linear-gradient(to bottom, var(--gold), transparent);
     animation: scrollPulse 2s 1.5s infinite;
   }
- 
+
   /* ── SECTION HEADINGS ── */
   .sec-header {
     display: flex;
@@ -244,7 +244,7 @@
     height: 1px;
     background: var(--border);
   }
- 
+
   /* ── ABOUT / SKILLS ── */
   .about-grid {
     display: grid;
@@ -258,7 +258,7 @@
     font-size: 1rem;
   }
   .about-text strong { color: var(--gold-light); font-weight: 500; }
- 
+
   .skills-list { display: flex; flex-direction: column; gap: 1.6rem; }
   .skill-group-label {
     font-family: 'DM Mono', monospace;
@@ -284,7 +284,7 @@
     transition: all 0.2s;
   }
   .tag:hover { border-color: var(--gold); color: var(--gold); }
- 
+
   /* ── EXPERIENCE ── */
   .timeline { position: relative; padding-left: 2rem; }
   .timeline::before {
@@ -344,7 +344,7 @@
     color: var(--gold);
     font-weight: 600;
   }
- 
+
   /* ── PROJECTS ── */
   .projects-grid {
     display: grid;
@@ -406,7 +406,7 @@
     color: var(--accent);
     border-radius: 2px;
   }
- 
+
   /* ── CERTIFICATIONS ── */
   .certs-grid {
     display: grid;
@@ -450,7 +450,7 @@
     font-size: 0.72rem;
     color: var(--muted);
   }
- 
+
   /* ── CONTACT ── */
   #contact { padding-bottom: 8rem; }
   .contact-inner {
@@ -505,7 +505,7 @@
     color: var(--white);
     margin-top: 0.1rem;
   }
- 
+
   /* ── FOOTER ── */
   footer {
     position: relative;
@@ -518,7 +518,7 @@
     color: var(--muted);
     letter-spacing: 0.06em;
   }
- 
+
   /* ── ANIMATIONS ── */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(24px); }
@@ -532,7 +532,7 @@
     0%, 100% { opacity: 0.6; transform: scaleY(1); }
     50%       { opacity: 1;   transform: scaleY(1.15); }
   }
- 
+
   .reveal {
     opacity: 0;
     transform: translateY(28px);
@@ -542,7 +542,7 @@
     opacity: 1;
     transform: translateY(0);
   }
- 
+
   /* ── VENTURE CARDS ── */
   .ventures-grid {
     display: grid;
@@ -612,7 +612,19 @@
     margin-bottom: 1.2rem;
   }
   .venture-tags { display: flex; flex-wrap: wrap; gap: 0.45rem; }
- 
+  .venture-link {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 1rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    transition: color 0.2s;
+  }
+  .venture-link:hover { color: var(--gold); }
+
   /* ── PROJECT TABS ── */
   .proj-tabs {
     display: flex;
@@ -655,7 +667,7 @@
     background: rgba(136,153,170,0.15);
     color: var(--muted);
   }
- 
+
   /* ── RESPONSIVE ── */
   @media (max-width: 768px) {
     nav { padding: 1rem 1.5rem; }
@@ -669,7 +681,7 @@
 </style>
 </head>
 <body>
- 
+
 <!-- NAV -->
 <nav>
   <a class="nav-logo" href="#hero">GK</a>
@@ -683,7 +695,7 @@
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
- 
+
 <!-- HERO -->
 <div id="hero" style="position:relative; z-index:1;">
   <div class="hero-tag">Available for opportunities</div>
@@ -703,7 +715,7 @@
     <span>Scroll</span>
   </div>
 </div>
- 
+
 <!-- ABOUT -->
 <section id="about">
   <div class="sec-header reveal">
@@ -751,7 +763,7 @@
     </div>
   </div>
 </section>
- 
+
 <!-- EXPERIENCE -->
 <section id="experience">
   <div class="sec-header reveal">
@@ -780,7 +792,7 @@
     </div>
   </div>
 </section>
- 
+
 <!-- VENTURES -->
 <section id="ventures">
   <div class="sec-header reveal">
@@ -789,7 +801,7 @@
     <div class="sec-line"></div>
   </div>
   <div class="ventures-grid">
- 
+
     <div class="venture-card reveal">
       <div class="venture-header">
         <div>
@@ -807,8 +819,9 @@
         <span class="tag">Recruitment</span>
         <span class="tag">Dashboard</span>
       </div>
+      <a href="https://www.linkedin.com/company/wirra/" target="_blank" class="venture-link">LinkedIn ↗</a>
     </div>
- 
+
     <div class="venture-card reveal">
       <div class="venture-header">
         <div>
@@ -827,11 +840,12 @@
         <span class="tag">Satellite Imagery</span>
         <span class="tag">GIS</span>
       </div>
+      <a href="https://www.linkedin.com/company/cloudeo-ag/" target="_blank" class="venture-link">LinkedIn ↗</a>
     </div>
- 
+
   </div>
 </section>
- 
+
 <!-- PROJECTS -->
 <section id="projects">
   <div class="sec-header reveal">
@@ -839,7 +853,7 @@
     <h2 class="sec-title">Projects</h2>
     <div class="sec-line"></div>
   </div>
- 
+
   <!-- TAB SWITCHER -->
   <div class="proj-tabs reveal">
     <button class="proj-tab active" onclick="switchTab('data')">
@@ -851,10 +865,10 @@
       <span class="tab-count">5</span>
     </button>
   </div>
- 
+
   <!-- DATA ANALYSIS PROJECTS -->
   <div id="tab-data" class="projects-grid tab-panel">
- 
+
     <div class="project-card reveal">
       <div class="proj-num">DA 01 · GitHub</div>
       <div class="proj-title">COVID-19 Global Data Analysis</div>
@@ -865,7 +879,7 @@
         <span class="proj-tag">Matplotlib</span><span class="proj-tag">Seaborn</span><span class="proj-tag">K-Means</span><span class="proj-tag">Epidemiology</span>
       </div>
     </div>
- 
+
     <div class="project-card reveal">
       <div class="proj-num">DA 02 · GitHub</div>
       <div class="proj-title">HR Analytics — Employee Attrition & Performance</div>
@@ -876,7 +890,7 @@
         <span class="proj-tag">Gradient Boosting</span><span class="proj-tag">HR Analytics</span><span class="proj-tag">ML Classification</span>
       </div>
     </div>
- 
+
     <div class="project-card reveal">
       <div class="proj-num">DA 03 · GitHub</div>
       <div class="proj-title">NLP Sentiment Analysis — Amazon Product Reviews</div>
@@ -887,7 +901,7 @@
         <span class="proj-tag">Scikit-learn</span><span class="proj-tag">Sentiment Analysis</span><span class="proj-tag">Python</span>
       </div>
     </div>
- 
+
     <div class="project-card reveal">
       <div class="proj-num">DA 04 · GitHub</div>
       <div class="proj-title">Tech & AI Candidate Market Segmentation</div>
@@ -898,23 +912,23 @@
         <span class="proj-tag">Scikit-learn</span><span class="proj-tag">Talent Analytics</span><span class="proj-tag">Market Segmentation</span>
       </div>
     </div>
- 
+
     <div class="project-card reveal">
       <div class="proj-num">DA 05 · Risk & Compliance</div>
       <div class="proj-title">Conflict of Interest Screening & Risk Assessment</div>
-      <div class="proj-period">Aug 2025 – Dec 2025 &nbsp;·&nbsp; <span style="color:var(--muted);font-family:'DM Mono',monospace;font-size:0.7rem;">Link coming soon</span></div>
+      <div class="proj-period"><a href="https://github.com/kariuki392/DataAnalysisProject19-COIScreeningAnalysis" target="_blank" style="color:var(--accent);text-decoration:none;font-family:'DM Mono',monospace;font-size:0.72rem;">View on GitHub ↗</a></div>
       <p class="proj-desc">Conducted conflict-of-interest checks for 35+ simulated audit and consulting clients. Delivered risk-rated screening reports applying IESBA, IFAC, and PCAOB frameworks. Used Excel and Power BI to analyse large datasets and produce management summaries, tracking all correspondence in a centralised system.</p>
       <div class="proj-tags">
         <span class="proj-tag">Excel</span><span class="proj-tag">Power BI</span><span class="proj-tag">Risk Assessment</span>
         <span class="proj-tag">IESBA / IFAC / PCAOB</span><span class="proj-tag">Compliance</span><span class="proj-tag">Data Integrity</span>
       </div>
     </div>
- 
+
   </div>
- 
+
   <!-- SOFTWARE DEVELOPMENT PROJECTS -->
   <div id="tab-software" class="projects-grid tab-panel" style="display:none;">
- 
+
     <div class="project-card reveal">
       <div class="proj-num">SD 01 · Healthcare · Final Year Project · GitHub</div>
       <div class="proj-title">DoctorLoop</div>
@@ -925,7 +939,7 @@
         <span class="proj-tag">Pharmacy Integration</span><span class="proj-tag">Final Year Project</span>
       </div>
     </div>
- 
+
     <div class="project-card reveal">
       <div class="proj-num">SD 02 · Data Engineering · In Progress</div>
       <div class="proj-title">ETL Captain Dash</div>
@@ -936,7 +950,7 @@
         <span class="proj-tag">Large-scale Data</span><span class="proj-tag">Dashboard</span><span class="proj-tag">Production-ready</span>
       </div>
     </div>
- 
+
     <div class="project-card reveal">
       <div class="proj-num">SD 03 · Scheduling · GitHub</div>
       <div class="proj-title">Captain's Appointment System</div>
@@ -946,7 +960,7 @@
         <span class="proj-tag">Full Stack</span><span class="proj-tag">Scheduling</span><span class="proj-tag">Web App</span><span class="proj-tag">CRUD</span>
       </div>
     </div>
- 
+
     <div class="project-card reveal">
       <div class="proj-num">SD 04 · Cybersecurity · GitHub</div>
       <div class="proj-title">File Integrity Checker</div>
@@ -957,21 +971,21 @@
         <span class="proj-tag">File Monitoring</span><span class="proj-tag">Security Tool</span>
       </div>
     </div>
- 
+
     <div class="project-card reveal">
-      <div class="proj-num">SD 05 · GitHub</div>
+      <div class="proj-num">SD 05 · Hackathon · GitHub</div>
       <div class="proj-title">AjiraMVP</div>
-      <div class="proj-period"><a href="https://github.com/kariuki392/AjiraMVP" target="_blank" style="color:var(--accent);text-decoration:none;font-family:'DM Mono',monospace;font-size:0.72rem;">github.com/kariuki392/AjiraMVP ↗</a> &nbsp;·&nbsp; <span style="color:var(--gold);font-family:'DM Mono',monospace;font-size:0.7rem;"></span></div>
+      <div class="proj-period"><a href="https://github.com/kariuki392/AjiraMVP" target="_blank" style="color:var(--accent);text-decoration:none;font-family:'DM Mono',monospace;font-size:0.72rem;">github.com/kariuki392/AjiraMVP ↗</a> &nbsp;·&nbsp; <span style="color:var(--gold);font-family:'DM Mono',monospace;font-size:0.7rem;">seeNairobi Hackathon</span></div>
       <p class="proj-desc">MVP built during the seeNairobi hackathon. Ajira (Swahili for "employment") is a platform tackling urban youth unemployment in Nairobi by connecting job seekers with opportunities through an accessible, mobile-first interface — built rapidly under hackathon conditions.</p>
       <div class="proj-tags">
-        <span class="proj-tag">V1 of Wirra</span><span class="proj-tag">MVP</span><span class="proj-tag">Employment Tech</span>
+        <span class="proj-tag">Hackathon</span><span class="proj-tag">MVP</span><span class="proj-tag">Employment Tech</span>
         <span class="proj-tag">Nairobi</span><span class="proj-tag">Mobile-first</span><span class="proj-tag">Social Impact</span>
       </div>
     </div>
- 
+
   </div>
 </section>
- 
+
 <!-- EDUCATION -->
 <section id="education">
   <div class="sec-header reveal">
@@ -999,7 +1013,7 @@
     </div>
   </div>
 </section>
- 
+
 <!-- CERTIFICATIONS -->
 <section id="certifications">
   <div class="sec-header reveal">
@@ -1038,7 +1052,7 @@
     </div>
   </div>
 </section>
- 
+
 <!-- CONTACT -->
 <section id="contact">
   <div class="sec-header reveal">
@@ -1083,12 +1097,12 @@
     </div>
   </div>
 </section>
- 
+
 <!-- FOOTER -->
 <footer>
   <p>© 2026 Gabriel Kariuki · Nairobi, Kenya · Kenyan Citizen</p>
 </footer>
- 
+
 <script>
   // Tab switching
   function switchTab(tab) {
@@ -1101,7 +1115,7 @@
       setTimeout(() => el.classList.add('visible'), i * 80);
     });
   }
- 
+
   // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
